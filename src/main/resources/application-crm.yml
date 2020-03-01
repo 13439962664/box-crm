@@ -1,0 +1,6 @@
+server:
+  servlet: 
+    context-path: /crm
+spring:
+  application:
+    name: crm
