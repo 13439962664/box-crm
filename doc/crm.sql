@@ -1,12 +1,10 @@
+INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('101', 'crm_customer_manage', 'å®¢æˆ·ç®¡ç†', '0', '0');
+INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('102', 'crm_customer_sel', 'æŸ¥è¯¢å®¢æˆ·', '0', '0');
+INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('103', 'crm_customer_add', 'æ·»åŠ å®¢æˆ·', '0', '0');
+INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('104', 'crm_customer_upd', 'ä¿®æ”¹å®¢æˆ·', '0', '0');
+INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('105', 'crm_customer_del', 'åˆ é™¤å®¢æˆ·', '0', '0');
 
-
-INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('101', 'crm_customer_manage', '¿Í»§¹ÜÀí', '0', '0');
-INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('102', 'crm_customer_sel', '²éÑ¯¿Í»§', '0', '0');
-INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('103', 'crm_customer_add', 'Ìí¼Ó¿Í»§', '0', '0');
-INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('104', 'crm_customer_upd', 'ĞŞ¸Ä¿Í»§', '0', '0');
-INSERT INTO `box`.`auth_permissions` (`id`, `permissions_code`, `permissions_name`, `del_`, `version_`) VALUES ('105', 'crm_customer_del', 'É¾³ı¿Í»§', '0', '0');
-
-INSERT INTO `box`.`auth_role` (`id`, `role_code`, `role_name`, `del_`, `version_`) VALUES ('2', 'admin_customer', '¿Í»§¹ÜÀíÔ±', '0', '0');
+INSERT INTO `box`.`auth_role` (`id`, `role_code`, `role_name`, `del_`, `version_`) VALUES ('2', 'admin_customer', 'å®¢æˆ·ç®¡ç†å‘˜', '0', '0');
 
 INSERT INTO `box`.`auth_role_permissions` (`role_id`, `permissions_id`) VALUES ('2', '101');
 INSERT INTO `box`.`auth_role_permissions` (`role_id`, `permissions_id`) VALUES ('2', '102');
