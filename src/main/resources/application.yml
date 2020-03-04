@@ -1,3 +1,3 @@
 spring:
   profiles:
-    include: base,jdbc,redis-standaone,auth,crm
+    include: base,jdbc-ms,redis-standaone,auth,crm
