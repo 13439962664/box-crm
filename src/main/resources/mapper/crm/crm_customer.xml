@@ -10,62 +10,6 @@
     <sql id="requirement">1=1 and del_=0</sql>
     <sql id="fromName">crm_customer</sql>
     
-    <select id="query" resultType="com.box.crm.pojo.CrmCustomer">
-        select <include refid="allColumn"/> 
-        from <include refid="fromName"/> 
-        where 1=1
-        <if test="del_ != null ">
-        	and del_=#{del_}
-        </if>
-        <if test="name != null and name != ''">
-        	<bind name="nameLike" value="'%' + name + '%'" />
-        	and name like #{nameLike} 
-        </if>
-        <if test="companyName != null  and companyName != ''">
-        	<bind name="companyNameLike" value="'%' + companyName + '%'" />
-        	and company_name like #{companyNameLike} 
-        </if>
-        <if test="mobilePhone != null  and mobilePhone != ''">
-        	<bind name="mobilePhoneLike" value="'%' + mobilePhone + '%'" />
-        	and (mobile_phone like #{mobilePhoneLike}
-        	or mobile_phone2 like #{mobilePhoneLike}
-        	or fixedPhone like #{mobilePhoneLike}
-        	) 
-        </if>
-    </select>
-    
-    <select id="get" resultType="com.box.crm.pojo.CrmCustomer" >
-        select <include refid="allColumn"/> 
-        from <include refid="fromName"/> 
-        where <include refid="requirement"/> and id=#{id}
-    </select>
-    
-    <insert id="create" useGeneratedKeys="true" keyProperty="id" >
-        insert into <include refid="fromName"/>
-        (<include refid="allColumn"/>) 
-        values(null,#{name},#{englishName},#{gender},#{mobilePhone},#{mobilePhone2},#{fixedPhone},#{birthday},#{nationalityName},#{provinceName},
-   		#{cityName},#{countyName},#{homeAddress},#{professionName},#{resume},#{companyName},#{companyAddress},#{positionName},#{del_},#{version_})
-    </insert>
-    
-    <update id="update" >
-        update <include refid="fromName"/> 
-        set name=#{name},english_name=#{englishName},gender=#{gender},mobile_phone=#{mobilePhone},mobile_phone2=#{mobilePhone2},fixed_phone=#{fixedPhone},
-        birthday=#{birthday},nationality_name=#{nationalityName},province_name=#{provinceName},
-   		city_name=#{cityName},county_name=#{countyName},home_address=#{homeAddress},profession_name=#{professionName},resume=#{resume},
-   		company_name=#{companyName},company_address=#{companyAddress},position_name=#{positionName}
-        where <include refid="requirement"/> and id=#{id}
-    </update>
-    
-    <update id="removeBatch" >
-        update <include refid="fromName"/> 
-        set del_=1 
-        where <include refid="requirement"/> and id in(
-        <foreach collection="ids" item="id" separator=",">
-      		#{id}
-      	</foreach>
-      	)
-    </update>
-    
     <update id="recoveryBatch" >
         update <include refid="fromName"/> 
         set del_=0 

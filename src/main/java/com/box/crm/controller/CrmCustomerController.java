@@ -5,11 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.box.common.DispatchDTO;
 import com.box.crm.pojo.CrmCustomer;
 import com.box.crm.service.CrmCustomerService;
 import com.box.utils.JsonUtil;
-import com.github.pagehelper.PageInfo;
+//import com.github.pagehelper.PageInfo;
 
 @RestController
 @RequestMapping("/crm/customer")
@@ -21,7 +22,7 @@ public class CrmCustomerController {
 	@RequiresPermissions({ "crm_customer_manage", "crm_customer_sel" })
 	@RequestMapping("/query")
 	public String query(CrmCustomer crmCustomer, Integer pageIndex, Integer pageSize) {
-		PageInfo<CrmCustomer> pageInfo = CrmCustomerServiceImpl.query(crmCustomer, pageIndex, pageSize);
+		IPage<CrmCustomer> pageInfo = CrmCustomerServiceImpl.query(crmCustomer, pageIndex, pageSize);
 		return JsonUtil.controllerSuccessJson(pageInfo);
 	}
 
