@@ -43,3 +43,19 @@ CREATE TABLE `crm_customer` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `crm_company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `del_` int(1) DEFAULT NULL COMMENT '删除标识：0正常；1删除',
+  `version_` int(11) DEFAULT NULL COMMENT '版本号码',
+  `create_time` datetime DEFAULT NULL,
+  `create_user` int(11) DEFAULT NULL,
+  `last_time` datetime DEFAULT NULL,
+  `last_user` int(11) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL COMMENT '公司名称',
+  `address` varchar(255) DEFAULT NULL COMMENT '地址',
+  `nationality_name` varchar(50) DEFAULT NULL COMMENT '国家',
+  `province_name` varchar(50) DEFAULT NULL COMMENT '省份',
+  `city_name` varchar(50) DEFAULT NULL COMMENT '城市',
+  `county_name` varchar(50) DEFAULT NULL COMMENT '区县',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
