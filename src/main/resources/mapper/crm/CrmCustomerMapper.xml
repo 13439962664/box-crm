@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.box.crm.mapper.CrmCustomerMapper">
+ 
+    <!--使用自定义的缓存 -->
+    <cache type="com.box.utils.MybatisRedisCache"/>  
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.box.crm.entity.CrmCustomerEntity">
+    <result column="id" property="id"/>
+    <result column="del_" property="del"/>
+    <result column="version_" property="version"/>
+    <result column="create_time" property="createTime"/>
+    <result column="create_user" property="createUser"/>
+    <result column="last_time" property="lastTime"/>
+    <result column="last_user" property="lastUser"/>
+        <result column="name" property="name"/>
+        <result column="english_name" property="englishName"/>
+        <result column="gender" property="gender"/>
+        <result column="mobile_phone" property="mobilePhone"/>
+        <result column="mobile_phone2" property="mobilePhone2"/>
+        <result column="fixed_phone" property="fixedPhone"/>
+        <result column="birthday" property="birthday"/>
+        <result column="nationality_name" property="nationalityName"/>
+        <result column="province_name" property="provinceName"/>
+        <result column="city_name" property="cityName"/>
+        <result column="county_name" property="countyName"/>
+        <result column="home_address" property="homeAddress"/>
+        <result column="profession_name" property="professionName"/>
+        <result column="resume" property="resume"/>
+        <result column="company_name" property="companyName"/>
+        <result column="company_address" property="companyAddress"/>
+        <result column="position_name" property="positionName"/>
+    </resultMap>
+ 
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+            id,
+            del_,
+            version_,
+            create_time,
+            create_user,
+            last_time,
+            last_user,
+        name, english_name, gender, mobile_phone, mobile_phone2, fixed_phone, birthday, nationality_name, province_name, city_name, county_name, home_address, profession_name, resume, company_name, company_address, position_name
+    </sql>
+</mapper>

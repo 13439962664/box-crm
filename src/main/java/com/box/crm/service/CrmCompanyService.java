@@ -1,6 +1,6 @@
 package com.box.crm.service;
 
-import com.box.crm.entity.CrmCustomerEntity;
+import com.box.crm.entity.CrmCompanyEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.box.common.GlobalException;
@@ -12,37 +12,37 @@ import java.util.List;
 * </p>
 *
 * @author sunyizhuo-13439962664
-* @since 2020-03-19
+* @since 2020-03-18
 */
-public interface CrmCustomerService extends IService<CrmCustomerEntity> {
+public interface CrmCompanyService extends IService<CrmCompanyEntity> {
 
     /**
     * 分页列表
     * @param param 根据需要进行传值
     * @return
     */
-    IPage<CrmCustomerEntity> page(CrmCustomerEntity param);
+    IPage<CrmCompanyEntity> page(CrmCompanyEntity param);
 
     /**
     * 详情
     * @param id
     * @return
     */
-    CrmCustomerEntity info(Long id);
+    CrmCompanyEntity info(Long id);
 
     /**
     * 新增
     * @param param 根据需要进行传值
     * @return
     */
-    void add(CrmCustomerEntity param) throws GlobalException;
+    void add(CrmCompanyEntity param) throws GlobalException;
 
     /**
     * 修改
     * @param param 根据需要进行传值
     * @return
     */
-    void modify(CrmCustomerEntity param) throws GlobalException;
+    void modify(CrmCompanyEntity param) throws GlobalException;
 
     /**
     * 删除(单个条目)
